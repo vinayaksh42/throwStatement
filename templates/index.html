@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Throw Statements Finder</title>
+</head>
+<body>
+    <h1>Find New 'throw' Statements Between Commits</h1>
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+    <form method="post">
+        <label for="repo_url">Repository URL:</label><br>
+        <input type="text" id="repo_url" name="repo_url" size="50"><br><br>
+
+        <label for="old_commit">Old Commit Hash/Tag:</label><br>
+        <input type="text" id="old_commit" name="old_commit"><br><br>
+
+        <label for="new_commit">New Commit Hash/Tag:</label><br>
+        <input type="text" id="new_commit" name="new_commit"><br><br>
+
+        <input type="submit" value="Find New Throws">
+    </form>
+</body>
+</html>

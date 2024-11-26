@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results - New Throw Statements</title>
+</head>
+<body>
+    <h1>New 'throw' Statements Added</h1>
+    <p>Number of new 'throw' statements: {{ new_throws|length }}</p>
+
+    {% if new_throws %}
+        <ul>
+        {% for item in new_throws %}
+            <li>
+                <strong>File:</strong> {{ item[0] }}<br>
+                <pre>{{ item[1] }}</pre>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No new 'throw' statements were found between the specified commits.</p>
+    {% endif %}
+
+    <a href="{{ url_for('index') }}">Go Back</a>
+</body>
+</html>
