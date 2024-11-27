@@ -6,14 +6,17 @@
 </head>
 <body>
     <h1>New 'throw' Statements Added</h1>
+    <p>Repository: {{ repo_url }}</p>
+    <p>Old Commit: {{ old_commit }}</p>
+    <p>New Commit: {{ new_commit }}</p>
     <p>Number of new 'throw' statements: {{ new_throws|length }}</p>
 
     {% if new_throws %}
         <ul>
-        {% for item in new_throws %}
+        {% for file_path, throw_block in new_throws %}
             <li>
-                <strong>File:</strong> {{ item[0] }}<br>
-                <pre>{{ item[1] }}</pre>
+                <strong>File:</strong> {{ file_path }}<br>
+                <pre>{{ throw_block }}</pre>
             </li>
         {% endfor %}
         </ul>
